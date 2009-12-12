@@ -17,10 +17,19 @@ class RubyManor4 < Processing::App
     
     text_font load_font("Univers66.vlw.gz")
     
-    #camera = "Sony Eye Toy (2)"
-    
     @sample_rate = 10
     
+    # You can get a list of cameras
+    # by doing Capture.list
+    # 
+    # 
+    # or you can use your default
+    # webcam by leaving it out of
+    # the parameters ..
+    #     
+    # camera = "Sony Eye Toy (2)"
+    # @capture = Capture.new(self, width, height, camera, 30)
+
     @capture = Capture.new(self, width, height, 30)
         
     @tweets = File.readlines("tweets.txt").join(" ")

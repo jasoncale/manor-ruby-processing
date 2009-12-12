@@ -15,10 +15,20 @@ class RubyManor3 < Processing::App
     size(800, 600)
     no_stroke
     
-    camera = "Sony Eye Toy (2)"
-    
     @sample_rate = 10
-    @capture = Capture.new(self, width, height, camera, 30)
+    
+    # You can get a list of cameras
+    # by doing Capture.list
+    # 
+    # 
+    # or you can use your default
+    # webcam by leaving it out of
+    # the parameters ..
+    #     
+    # camera = "Sony Eye Toy (2)"
+    # @capture = Capture.new(self, width, height, camera, 30)
+
+    @capture = Capture.new(self, width, height, 30)
   end
 
   def draw    
